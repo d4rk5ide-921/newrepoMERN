@@ -5,7 +5,7 @@ import axios from "axios";
 const TodoTable = () => {
   const { todo, setTodo } = useContext(ToDoContext);
   const [show, setShow] = useState({ id: "", title: "", description: "" });
-  const [newTodo, setNewTodo] = useState({ title: "", description: "" });
+  const [newTodo, setNewTodo] = useState({ title: "", description: "", image: "" });
   const [showAddRow, setShowAddRow] = useState(false);
 
   const handleDelete = async (item) => {
@@ -19,7 +19,7 @@ const TodoTable = () => {
       console.log(e);
     }
   };
-    
+
   const handleUpdate = (item) => {
     setShow({ id: item._id, title: item.title, description: item.description });
   };
@@ -45,16 +45,25 @@ const TodoTable = () => {
       alert("Please enter both title and description!");
       return;
     }
+
+    const image = await uploadToCloudinary(newTodo.image);
+    console.log(image);
+    if (!image) {
+      return alert("Image url is not present");
+    }
+
     try {
       const res = await axios.post("http://localhost:5000/todo/register", {
         title: newTodo.title,
         description: newTodo.description,
+        image
       });
       console.log(res.data);
       const tempTodo = {
         _id: Date.now().toString(),
         title: newTodo.title,
         description: newTodo.description,
+        image: image,
       };
       setTodo((prevTodo) => [...prevTodo, tempTodo]);
       setNewTodo({ title: "", description: "" });
@@ -63,6 +72,32 @@ const TodoTable = () => {
       console.log(e);
     }
   };
+
+  const uploadToCloudinary = async (file) => {
+    // const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+    const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+    const folder = import.meta.env.VITE_CLOUDINARY_FOLDER;
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", uploadPreset);
+    formData.append("folder", folder);
+
+    try {
+      const res = await axios.post(
+        `https://api.cloudinary.com/v1_1/dvrjqpher/image/upload`,
+        formData
+      );
+
+      return res.data.secure_url;
+
+    } catch (error) {
+      console.error("Cloudinary Upload Error:", error.response?.data || error);
+      return null;
+    }
+  };
+
+
 
   return (
     <table border="1" className="table">
@@ -124,7 +159,14 @@ const TodoTable = () => {
                 }
               />
             </td>
-            <td></td>
+            <td>
+              <input
+                type="file"
+                onChange={(e) =>
+                  setNewTodo({ ...newTodo, image: e.target.files[0] })
+                }
+              />
+            </td>
           </tr>
         )}
 
@@ -163,6 +205,7 @@ const TodoTable = () => {
               <>
                 <td>{item?.title}</td>
                 <td>{item?.description}</td>
+                <td><img src={item?.image} alt="img" width={100} height={100} /> </td>
                 <td>
                   <button
                     onClick={() => handleDelete(item)}

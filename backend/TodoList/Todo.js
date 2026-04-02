@@ -4,6 +4,7 @@ const UserSchema = new mongoose.Schema(
   {
     title: String,
     description: String,
+    image: String,
   },
   { timestamps: true },
 );

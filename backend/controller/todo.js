@@ -1,7 +1,7 @@
 import User from "../TodoList/Todo.js";
 
 export const registerTodo = async (req, res) => {
-  const { title, description } = req.body;
+  const { title, description, image } = req.body;
 
   if (!description) {
     return res.send("Please enter the description!");
@@ -17,7 +17,7 @@ export const registerTodo = async (req, res) => {
     return res.send("List already exists");
   }
 
-  const todo = new User({ title, description });
+  const todo = new User({ title, description, image });
   await todo.save();
 
   res.send("List registered successfully");
@@ -39,7 +39,7 @@ export const updateTodo = async (req, res) => {
     console.log(error);
   }
 };
-    
+
 export const deleteTodo = async (req, res) => {
   try {
     const { id } = req.body;
@@ -66,5 +66,5 @@ export const allfunc = (req, res, next) => {
     console.log(title, description);
 
     next();
-  } catch (error) {}
+  } catch (error) { }
 };

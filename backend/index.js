@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import dns from "node:dns/promises";
 import ConnectionDB from "./DB/Connection.js";
 import todo from "./routes/todo.js";
 dotenv.config();
@@ -58,6 +59,11 @@ app.use("/todo", todo);
 //   const user = await User.find();
 //   res.send(user);
 // });
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+
+
+
+
 ConnectionDB();
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
