@@ -1,12 +1,97 @@
- .main {
-     margin-top: 100px;
-     width: 100%;
-     height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+}
 
- }
+.img11 {
+    background-image: url(../../assets/img-11.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+    margin-top: 100px;
+}
 
- video {
-     width: 100%;
-     height: 400px;
-     object-fit: cover;
- }
+.img11::before {
+    margin-top: 100px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 🔥 adjust darkness here */
+}
+
+/* Make sure text stays above overlay */
+.img11>* {
+    position: relative;
+    z-index: 1;
+}
+
+.custom-subscribe {
+    max-width: 600px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #f1f1f1;
+    padding: 5px;
+}
+
+.custom-subscribe input {
+    border-radius: 50px;
+    padding-left: 20px;
+}
+
+.custom-subscribe button {
+    border-radius: 50px !important;
+    /* force full round */
+    background-color: #d4a44a;
+    border: none;
+}
+
+.blue-text {
+    color: #27548A;
+}
+
+.input-custom {
+    height: 50px;
+    width: 420px;
+    background-color: white;
+    border: 1px solid rgb(191, 188, 188);
+    padding: 2px;
+}
+
+.input-cus {
+    height: 45px;
+    width: 90%;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: white;
+    border: none;
+    color: rgb(83, 80, 80) !important;
+}
+
+.input-cus::placeholder {
+    color: rgb(83, 80, 80) !important;
+    /* Set your desired color */
+    opacity: 1;
+    /* Optional: ensures full visibility */
+}
+.font-js{
+     font-size: 0.7rem;
+     background-color: white;
+     color: black;
+     border: 1px solid black;
+     border-radius: 50px;
+     padding: 5px;
+
+}
+.gop-4 {
+    display: flex; /* or 'grid' if you prefer */
+    flex-wrap: wrap; /* allows items to go to next line if needed */
+    gap: 5px; /* now it will actually work */
+    width: 60%;
+}

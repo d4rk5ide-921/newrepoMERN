@@ -1,56 +1,53 @@
 import React from 'react';
+// import "./style.css";
 
 const Cert = () => {
   return (
-    <div
-      id="certCarousel"
-      className="carousel slide"
-      data-bs-ride="carousel"
-    >
+    <div className="cert-container bodyy">
 
-      {/* Indicators */}
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="0" className="active"></button>
-        <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="3"></button>
-        <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="4"></button>
+      <div className="cert-header d-flex justify-content-center align-items-center">
+        <p className='fs-3 text-white'><b>Cybersecurity Certifications</b></p>
       </div>
+    <br /><br />
+      <div className="container">
 
-      {/* Slides */}
-      <div className="carousel-inner">
-
-        <div className="carousel-item active d-flex flex-row gap-4">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" className="d-block w-100" alt="Slide 1" />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" className="d-block w-100" alt="Slide 5" />
-
+        <div className="column green">
+          <h2>Beginner</h2>
+          <div className="all-in">Network+</div>
+          <div className="all-in">CCNA</div>
+          <div className="all-in">Security+</div>
         </div>
 
-        <div className="carousel-item">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" className="d-block w-100" alt="Slide 2" />
+        <div className="column orange">
+          <h2>Cloud / Vendor</h2>
+          <div className="all-in">AWS CP</div>
+          <div className="all-in">AZ-900</div>
+          <div className="all-in">Google ACE</div>
         </div>
 
-        <div className="carousel-item">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" className="d-block w-100" alt="Slide 3" />
+        <div className="column black">
+          <h2>Security Core</h2>
+          <div className="all-in">Security+</div>
+          <div className="all-in">SSCP</div>
+          <div className="all-in">GSEC</div>
         </div>
 
-        <div className="carousel-item">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" className="d-block w-100" alt="Slide 4" />
+        <div className="column blue">
+          <h2>Blue Team</h2>
+          <div className="all-in">CySA+</div>
+          <div className="all-in">GCIA</div>
+          <div className="all-in">GCIH</div>
         </div>
 
-
+        <div className="column red">
+          <h2>Red Team</h2>
+          <div className="all-in">eJPT</div>
+          <div className="all-in">OSCP</div>
+          <div className="all-in">CRTO</div>
+        </div>
 
       </div>
-
-      {/* Controls */}
-      <button className="carousel-control-prev" type="button" data-bs-target="#certCarousel" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon"></span>
-      </button>
-
-      <button className="carousel-control-next" type="button" data-bs-target="#certCarousel" data-bs-slide="next">
-        <span className="carousel-control-next-icon"></span>
-      </button>
-
+      <br /> 
     </div>
   );
 };

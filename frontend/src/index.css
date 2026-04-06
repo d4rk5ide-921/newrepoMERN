@@ -1,25 +1,30 @@
-*{
-    margin: 0;
-    padding: 0;
-    /* background-color: ; */
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: ; */
 }
-.full-back{
+
+.full-back {
   background-image: url("./assets/ChatGPT Image Feb 11, 2026, 04_17_05 PM.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;   /* THIS makes it sticky */
+  background-attachment: fixed;
+  /* THIS makes it sticky */
   position: relative;
 }
+
 .header-sticky {
   position: fixed;
   top: 0;
   z-index: 9;
-  width:100%
+  width: 100%
 }
-.h-back{
-    min-height: 100px;
-    background-color: #27548A;
+
+.h-back {
+  min-height: 100px;
+  background-color: #27548A;
 }
+
 .txt {
   margin: 10px;
   border-bottom: 3px solid transparent;
@@ -35,29 +40,34 @@
 .txt.active {
   border-bottom-color: #DDA853;
 }
+
 .txt {
   border-bottom: 3px solid transparent;
   transition: border-bottom-color 0.3s ease;
 }
 
-.imag{
-    height:70px; 
-    width:23z0px;
+.imag {
+  height: 70px;
+  width: 23z0px;
 }
+
 @media (max-width: 1100px) {
   .nav-links {
     display: flex !important;
   }
-  .after{
+
+  .after {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 }
+
 /* .nav-links{
     display: none !important;
 } */
-html, body {
+html,
+body {
   height: 100vh;
   margin: 0;
 }
@@ -79,37 +89,42 @@ html, body {
   text-align: center;
   min-height: 300px;
 }
-.btnu{
-    all: unset;
-    /* display: inline-flex;   🔥 REQUIRED */
-    justify-content: center;
-    /* align-items: center; */
+
+.btnu {
+  all: unset;
+  /* display: inline-flex;   🔥 REQUIRED */
+  justify-content: center;
+  /* align-items: center; */
   cursor: pointer;
-    background-color: #DDA853;
-    padding: 10px;
-    border-radius: 3px;
-    color: white;
-    /* width: 140px; */
+  background-color: #DDA853;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+  /* width: 140px; */
 }
 
-.sub-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+.sub-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
+
 .imaga {
   display: block;
   margin-left: 50px;
 }
-.para{
-     text-align: justify;
-     margin-left: 50px;
-     margin-right: 50px;
+
+.para {
+  text-align: justify;
+  margin-left: 50px;
+  margin-right: 50px;
 }
-.quick{
-    display: block;
+
+.quick {
+  display: block;
 }
+
 /*  */
 
 .quick li {
@@ -123,56 +138,65 @@ html, body {
   text-decoration: none;
   /* display: block;      makes all text align perfectly */
 }
+
 .word-gap {
   font-size: 20px;
   /* text-align: left; */
 }
 
-.contact ul li i{
+.contact ul li i {
   display: block;
 }
-.background{
+
+.background {
   background-color: #27548A;
 
 }
-.left-size{
-    text-align:justify;
+
+.left-size {
+  text-align: justify;
 }
-.back-img{
+
+.back-img {
   background-image: url(./assets/ChatGPT\ Image\ Feb\ 5\,\ 2026\,\ 03_24_13\ PM.png);
-  background-size:cover;
+  background-size: cover;
   height: 650px;
   width: 100%;
   margin-top: 100px;
 }
 
-.sec-img{
-    background-image: url(./assets/ChatGPT\ Image\ Feb\ 6\,\ 2026\,\ 11_50_49\ PM.png);
-    background-size:cover;
-    min-height: 650px;
-    width: 100%;
+.sec-img {
+  background-image: url(https://res.cloudinary.com/dvrjqpher/image/upload/v1775457693/img/upload/qxfflt06bbjytosexfjq.png);
+  background-size: cover;
+  min-height: 650px;
+  width: 100%;
 }
 
 
 
-.slide{
+.slide {
   margin-top: -70px;
   background-color: #F5EEDC;
   color: #27548A;
 }
-.word{
+
+.word {
   word-spacing: 5px;
 }
-.slider{
-    color: #27548A;
+
+.slider {
+  color: #27548A;
 
 }
-.font{
+
+.font {
   font-size: 30px;
   color: #27548A;
 }
+
 .cyber-card {
-  background-color: #1f4f82;   /* blue like screenshot */
+  background-color: #1f4f82;
+  /* blue like screenshot */
   height: 280px;
   padding: 30px;
   transition: all 0.4s ease;
@@ -214,6 +238,7 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
+
 .imge {
   background-image: url("./assets/Screenshot_2026-02-10_17-37-39.png");
   background-size: cover;
@@ -221,81 +246,93 @@ html, body {
   background-repeat: no-repeat;
 
   width: 100%;
-  height: 100%;        /* for large screens */
-  min-height: 250px;   /* for small screens */
+  height: 100%;
+  /* for large screens */
+  min-height: 250px;
+  /* for small screens */
   border-radius: 6px;
 }
 
-.btns{
-    all: unset;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+.btns {
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: #DDA853;
-    padding: 10px 16px;
-    border-radius: 3px;
-    color: white;
+  background-color: #DDA853;
+  padding: 10px 16px;
+  border-radius: 3px;
+  color: white;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-.inner-div{
+
+.inner-div {
   height: 40px;
   width: 40px;
   background-size: cover;
   border-radius: 50%;
   background-image: url(./assets/Screenshot_2026-02-10_17-37-39.png);
 }
-.back-g{
+
+.back-g {
   background-color: #F5EEDC;
 }
-.font-size{
+
+.font-size {
   font-size: 18px;
 }
-.back-1{
+
+.back-1 {
   background-image: url(./assets/pic-1.png);
   background-size: cover;
   height: 230px;
 }
-.back-2{
+
+.back-2 {
   background-image: url(./assets/pic-2.png);
   background-size: cover;
   height: 230px;
 }
-.back-3{
+
+.back-3 {
   background-image: url(./assets/pic-3.png);
   background-size: cover;
   height: 230px;
 }
-.text-blue{
+
+.text-blue {
   color: #27548A;
 }
-.all-in{
-    all: unset;
-    display: inline-flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    font-size: 20px;
-    color: #DDA853;
-    /* background-color: #DDA853; */
-    /* padding: 10px 16px; */
-    border-radius: 3px;
-    /* color: white; */
 
-    white-space: nowrap;
+.all-in {
+  all: unset;
+  display: inline-flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  font-size: 20px;
+  color: #DDA853;
+  /* background-color: #DDA853; */
+  /* padding: 10px 16px; */
+  border-radius: 3px;
+  /* color: white; */
+
+  white-space: nowrap;
 }
 
-.shadow{
+.shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width:100%;
+  width: 100%;
 }
-.bg-blue{
+
+.bg-blue {
   all: unset;
   background-color: #163b63;
   padding: 10px 20px;
   color: white;
   border-radius: 5px;
 }
+
 .carousel-inner {
   display: flex;
 }
@@ -304,16 +341,19 @@ html, body {
   flex: 0 0 50%;
 }
 
-.carousel-up{
+.carousel-up {
   margin: 150px;
 }
-.carousel-item-1{
-  background-image:url(./assets/ChatGPT\ Image\ Feb\ 5\,\ 2026\,\ 03_24_13\ PM.png);
+
+.carousel-item-1 {
+  background-image: url(./assets/ChatGPT\ Image\ Feb\ 5\,\ 2026\,\ 03_24_13\ PM.png);
   background-size: cover;
 }
-.upper-side{
+
+.upper-side {
   margin-top: 100px;
 }
+
 .back-ima1 {
   background-image: url(./assets/Adobe\ Express\ -\ file.png);
   /* margin-top: 500px; */
@@ -326,7 +366,8 @@ html, body {
   background-size: cover;
   background-position: center;
 }
-.back-ima2{
+
+.back-ima2 {
   background-image: url("./assets/ChatGPT Image Feb 16, 2026, 04_32_46 PM.png");
   background-size: cover;
   /* background-position: center; */
@@ -335,7 +376,7 @@ html, body {
 }
 
 .back-p {
-  background: 
+  background:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("./assets/chat-image.png");
   margin-top: 100px;
@@ -346,6 +387,7 @@ html, body {
   width: 100%;
   min-height: 350px;
 }
+
 .input-1 {
   all: unset;
   width: 300px;
@@ -353,7 +395,8 @@ html, body {
   background-color: white;
   border-radius: 3px;
   color: #666;
-  padding: 5px 10px;   /* IMPORTANT — otherwise text sticks to edge */
+  padding: 5px 10px;
+  /* IMPORTANT — otherwise text sticks to edge */
 }
 
 /* FIX PLACEHOLDER */
@@ -361,8 +404,9 @@ html, body {
   color: #999;
   opacity: 1;
 }
-.image-back{
-    background:
+
+.image-back {
+  background:
     url("./assets/ebookgrahic4-1525x1536.jpg");
   /* margin-top: 100px; */
   background-position: center;
@@ -371,13 +415,15 @@ html, body {
 
   min-width: 800px;
   max-width: 500px;
-  min-height:500px;
+  min-height: 500px;
   max-height: auto;
 }
-.fonto{
+
+.fonto {
   color: #27548A;
 }
-.price{
+
+.price {
   height: 150px;
   max-width: 600px;
   align-items: center;
@@ -387,27 +433,33 @@ html, body {
   background-color: #F5EEDC;
   border-radius: 5px;
 }
-.blue-b{
-  background-color:#183B4E;
+
+.blue-b {
+  background-color: #183B4E;
 }
-.backi{
-  background-color:#F5EEDC;
+
+.backi {
+  background-color: #F5EEDC;
 }
-.back-io{
+
+.back-io {
   background-image: url(./assets/Screenshot_2026-02-18_14-27-58.png);
   height: 80px;
   background-size: cover;
   background-position: center;
 }
-.user-inp{
+
+.user-inp {
   all: unset;
   height: 40px;
   border: 1px solid rgb(228, 219, 219);
   border-radius: 5px;
 }
-.user-inp::placeholder{
+
+.user-inp::placeholder {
   color: #999;
 }
-.table{
+
+.table {
   margin-top: 100px;
 }

@@ -1,0 +1,82 @@
+.bodyy {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin-top: 100px;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.column {
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.column h2 {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Cards */
+.all-in {
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Colors */
+.green {
+  background: #dff5df;
+}
+.green .all-in {
+  background: #2e7d32;
+}
+
+.orange {
+  background: #fff0e0;
+}
+.orange .all-in {
+  background: #ef6c00;
+}
+
+.black {
+  background: #e0e0e0;
+}
+.black .all-in {
+  background: #333;
+}
+
+.blue {
+  background: #e3f2fd;
+}
+.blue .all-in {
+  background: #1565c0;
+}
+
+.red {
+  background: #fde0e0;
+}
+.red .all-in {
+  background: #c62828;
+}
+
+/* Header */
+.cert-header {
+  background-image: url("../../assets/image-kali.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
