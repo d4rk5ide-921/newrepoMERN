@@ -66,7 +66,7 @@ const TodoTable = () => {
         image: image,
       };
       setTodo((prevTodo) => [...prevTodo, tempTodo]);
-      setNewTodo({ title: "", description: "" });
+      setNewTodo({ title: "", description: "", image: "" });
       setShowAddRow(false);
     } catch (e) {
       console.log(e);
