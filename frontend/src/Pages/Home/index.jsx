@@ -5,16 +5,19 @@ import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { FaDatabase } from "react-icons/fa6";
 import { FaLaptopCode } from "react-icons/fa";
 import { AuthContext } from '../Context/AuthContext';
+import { ToDoContext } from '../Context/ToDoContext';
 
 
 
 
 const Home = () => {
+  const { todo } = useContext(ToDoContext);
+  const { student } = useContext(ToDoContext);
 
   const [count, setCount] = useState(0)
   const [experience, setExperience] = useState(0)
   const [followers, setFollowers] = useState(0)
-
+  console.log(todo);
 
   setTimeout(() => {
     if (count < 20) {
@@ -151,17 +154,19 @@ const Home = () => {
         </div>
         <br /><br /><br />
         <div className='container container-md-fluid slider '>
-          <div className='row d-flex flex-lg-row flex-md-row flex-sm-column gap-4 '>
-            <div className='col-lg-6 col-md-12 col-sma '><div>
-              <b className='fs-2'>The Most Effective Way to Learn Cybersecurity—Period.</b><br /><br />
-              <p className='text-black word'>
-                If you’re serious about breaking into cybersecurity, you don’t need another cert or theory-heavy course. You need a blueprint. A step-by-step guide that shows you exactly what to do—what to learn, how to practice, and how to get hired. That’s exactly what you’ll find here. <br /> <br />
-                This isn’t lecture-based learning or recycled content. It’s hands-on, real-world training designed to make you think—and work—like a cybersecurity pro from day one. You’ll build the skills employers actually care about by solving real problems and navigating real threats—just like you’d do on the job. We designed this to cut out the fluff so you can flatten your learning curve and get this done quicker by not spending countless hours learning stuff that doesn’t matter. <br /> <br />
-                Think you need a degree or endless certifications to get into cybersecurity? You don’t. We’ve helped people with no prior experience land cybersecurity roles without a single cert or coding background. Why? Because what matters most isn’t your credentials—it’s your ability to solve problems and think like a security professional. <br /> <br />
-                This program builds exactly that. You’ll be learning, practicing, and building a portfolio of real-world skills—without wasting time on expensive, outdated credential-chasing. If you’re ready to stop guessing and start executing a proven plan, you are in the right place.</p></div>
-            </div>
-            <div className='col  sec-img'></div>
-          </div>
+          {
+            todo.map((item, i) => {
+
+              return (
+                <div key={i} className='row d-flex flex-row flex-lg-row flex-md-row flex-sm-column gap-4 align-items-center'>
+                  <div className='col-lg-6 col-md-12 col-sm'>
+                    <b>{item?.title}</b><br /><br />
+                    <p className='text-black word'>{item?.description}</p>
+                  </div>
+                  <img src={item?.image} alt="image" className='col-lg-6 col-md-12 col-sm' />
+                </div>)
+            })
+          }
         </div>
         <br /><br /><br />
         <div className="container">
@@ -196,37 +201,35 @@ const Home = () => {
         </div>
         <br /><br /><br />
         <div className="container py-5">
-          <div className="row gx-5 gy-5 align-items-stretch">
+          {student.map((item, i) => {
+            return (
+              <div className="row gx-5 gy-5 align-items-stretch" key={i}>
 
-            {/* IMAGE COLUMN */}
-            <div className="col-12 col-md-6 d-flex">
-              <div className="imge w-100"></div>
-            </div>
+                {/* IMAGE COLUMN */}
+                <div className="col-12 col-md-6 d-flex">
+                  <img src={item?.img} alt="image" className='imge' />
+                </div>
 
-            {/* CONTENT COLUMN */}
-            <div className="col-12 col-md-6">
-              <p className="fs-2 font mb-3">
-                <b>
-                  Feeling Stuck and Wondering <br />
-                  if Cybersecurity is even for <br />
-                  you?
-                </b>
-              </p>
+                {/* CONTENT COLUMN */}
+                <div className="col-12 col-md-6">
+                  <p className="fs-2 font mb-3">
+                    <b>
+                      {item?.title}
+                    </b>
+                  </p>
 
-              <p className="fs-5 mb-4">
-                You’ve probably seen the job listings—“5+ years experience required”—and thought,
-                how am I supposed to get that if no one will give me a chance? Maybe you’ve racked
-                up a few certifications, but they haven’t moved the needle. The truth is, what
-                you’re missing isn’t more theory or another certification—it’s hands-on, real-world
-                experience that proves you can actually do the job.
-              </p>
+                  <p className="fs-5 mb-4">
+                    {item?.Cybersecurity}
+                  </p>
 
-              <button className="btns fs-5">
-                <b>Let Us Help You Get Unstuck</b>
-              </button>
-            </div>
+                  <button className="btns fs-5">
+                    <b>{item?.btn}</b>
+                  </button>
+                </div>
 
-          </div>
+              </div>
+            )
+          })}
         </div>
         <br /><br /><br />
         <div className='container '>

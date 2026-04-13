@@ -14,11 +14,11 @@ import ToDoProvider from './Pages/Context/ToDoContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <ToDoProvider>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </ToDoProvider>
+      <ToDoProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </ToDoProvider>
   </BrowserRouter>
 
 )

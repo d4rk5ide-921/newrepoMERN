@@ -50,8 +50,8 @@ const Header = () => {
             </li>
           </ul>
 
-          <Link to="/login" className="btnu mx-auto mx-lg-0 px-3">
-            <strong>Login</strong>
+          <Link to="/admin/private/student" className="btnu mx-auto mx-lg-0 px-3">
+            <strong>ToDo</strong>
           </Link>
 
         </div>

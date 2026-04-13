@@ -26,7 +26,7 @@ const Pages = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/free-break" element={<FreeBreak />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/todo" element={<TodoTable />} />
+          {/* <Route path="/todo" element={<TodoTable />} /> */}
           <Route path="/cert" element={<Cert />} />
           <Route path="/admin/*" element={<Admin />} />
           <Route path="*" element={<>Page Not Found 404</>} />
