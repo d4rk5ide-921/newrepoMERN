@@ -5,6 +5,7 @@ import dns from "node:dns/promises";
 import ConnectionDB from "./DB/Connection.js";
 import todo from "./routes/todo.js";
 import Student from "./routes/student.js";
+import registers from "./routes/register.js";
 dotenv.config();
 
 const app = express();
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 
 app.use("/todo", todo);
 app.use("/student", Student);
+app.use("/user", registers);
 
 // app.post("/register", async (req, res) => {
 //   const { title, description } = req.body;

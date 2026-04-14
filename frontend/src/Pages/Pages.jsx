@@ -8,6 +8,7 @@ import Blog from './Blog'
 import Cert from './Cert'
 import Footer from './Component/Footer'
 import Header from './Component/Header'
+import Register from './Login/Register'
 import Login from './Login/Login'
 import Admin from '../admin'
 import TodoTable from './Todo'
@@ -26,6 +27,7 @@ const Pages = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/free-break" element={<FreeBreak />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/register" element={<Register />} />
           {/* <Route path="/todo" element={<TodoTable />} /> */}
           <Route path="/cert" element={<Cert />} />
           <Route path="/admin/*" element={<Admin />} />
