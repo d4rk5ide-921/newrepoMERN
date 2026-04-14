@@ -48,6 +48,9 @@ const Header = () => {
             <li className="nav-item">
               <Link className="nav-link text-white txt fs-5" to="/about"><b>About</b></Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link text-white txt fs-5" to="/register"><b>Register</b></Link>
+            </li>
           </ul>
 
           <Link to="/admin/private/student" className="btnu mx-auto mx-lg-0 px-3">
