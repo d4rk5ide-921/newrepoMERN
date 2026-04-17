@@ -1,7 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
+
+  const user = JSON.parse(localStorage.getItem("user"))
+  console.log(user)
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    localStorage.removeItem("user")
+    navigate("/login")
+  }
+
+
   return (
     <nav className={`navbar navbar-expand-lg navbar-dark h-back px-4 fixed-top`}>
       <div className="container-fluid">
@@ -49,7 +59,11 @@ const Header = () => {
               <Link className="nav-link text-white txt fs-5" to="/about"><b>About</b></Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white txt fs-5" to="/register"><b>Register</b></Link>
+              {
+                user?.name ?
+                  <button onClick={handleLogout} className="nav-link text-white txt fs-5"><b>LogOut</b></button> :
+                  <Link className="nav-link text-white txt fs-5" to="/login"><b>Login</b></Link>
+              }
             </li>
           </ul>
 

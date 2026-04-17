@@ -11,7 +11,7 @@ import Header from './Component/Header'
 import Register from './Login/Register'
 import Login from './Login/Login'
 import Admin from '../admin'
-import TodoTable from './Todo'
+// import TodoTable from './Todo'
 // import Footer from './Component/Error'
 
 
