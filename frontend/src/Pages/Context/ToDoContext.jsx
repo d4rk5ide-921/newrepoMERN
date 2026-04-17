@@ -17,11 +17,11 @@ const ToDoProvider = ({ children }) => {
         setTodo(res.data.user);
         setStudent(resp.data.student);
         // setregistersData(reg.data.register);
-        console.log(todo)
-        console.log(student)
-        console.log(registersData)
+        // console.log(todo)
+        // console.log(student)
+        // console.log(registersData)
       } catch (e) {
-        console.log(e);
+        // console.log(e);
       }
     };
     fetchTodo();

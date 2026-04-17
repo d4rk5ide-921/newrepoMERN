@@ -17,7 +17,7 @@ const Home = () => {
   const [count, setCount] = useState(0)
   const [experience, setExperience] = useState(0)
   const [followers, setFollowers] = useState(0)
-  console.log(todo);
+  // console.log(todo);
 
   setTimeout(() => {
     if (count < 20) {

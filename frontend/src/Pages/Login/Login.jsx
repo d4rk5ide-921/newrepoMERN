@@ -10,7 +10,8 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
     const user = { email, password }
     console.log(1)

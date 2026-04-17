@@ -38,7 +38,7 @@ export const registers = async (req, res) => {
         }
         const findUser = await Student.findOne({ email })
         if (findUser) {
-            return res.status(409).send({ message: "User already exists" })
+            return res.status(409).send({ message: "Something went wrong" })
         }
         const hashPassword = await bcrypt.hash(password, 10)
         const student = new Student({ name, email, password: hashPassword });

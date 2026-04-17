@@ -13,6 +13,9 @@ const Register = () => {
         password: "",
         confirmPassword: ""
     })
+    const [errorMsg, setErrorMsg] = useState("")
+    const [passwordError, setPasswordError] = useState("")
+    const [confirmPasswordError, setConfirmPasswordError] = useState("")
 
     const navigate = useNavigate()
     const { register } = useContext(ToDoContext)
@@ -26,10 +29,12 @@ const Register = () => {
     }
 
     // Handle submit
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
         if (registersData.password !== registersData.confirmPassword) {
-            alert("Passwords do not match!");
+            // alert("Passwords do not match!");
+            setPasswordError("Passwords do not match!");
             return;
         }
 
@@ -43,13 +48,15 @@ const Register = () => {
                 }
             );
             console.log(res.data)
-            alert("User registered successfully!");
-
+            // alert("User registered successfully!");
+            setErrorMsg("User registered successfully!");
             navigate("/login");
 
         } catch (error) {
             console.log(error);
-            alert("Registration failed");
+            const errorMessage = error.response?.data?.message || "Registration failed";
+            // alert(errorMessage);
+            setErrorMsg(errorMessage);
         }
     };
 
@@ -115,7 +122,15 @@ const Register = () => {
                             <button onClick={handleSubmit} className="btn btn-primary w-100">
                                 Register
                             </button>
-
+                            {errorMsg && (
+                                <p className="text-danger text-center">{errorMsg}</p>
+                            )}
+                            {passwordError && (
+                                <p className="text-danger text-center">{passwordError}</p>
+                            )}
+                            {confirmPasswordError && (
+                                <p className="text-danger text-center">{confirmPasswordError}</p>
+                            )}
                             <p className="text-center mt-3 mb-0">
                                 Already have an account?
                                 <Link to="/login" className="text-primary fw-semibold">
