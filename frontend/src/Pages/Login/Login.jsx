@@ -13,11 +13,13 @@ const Login = () => {
   const handleLogin = async () => {
 
     const user = { email, password }
-
+    console.log(1)
     try {
       const res = await axios.post("http://localhost:5000/user/login", user)
+      console.log(2)
 
       const { email: userEmail, name, _id } = res.data
+      console.log(3)
 
       // store user
       localStorage.setItem("user", JSON.stringify({
@@ -51,7 +53,7 @@ const Login = () => {
               <p className="text-danger text-center">{errorMsg}</p>
             )}
 
-            <form onSubmit={handleLogin}>
+            <form>
 
               <div className="mb-3">
                 <label className="form-label">Email</label>
@@ -81,7 +83,7 @@ const Login = () => {
                 <a href="#" className="small text-primary">Forgot Password?</a>
               </div>
 
-              <button type="submit" className="btn btn-primary w-100">
+              <button onClick={handleLogin} className="btn btn-primary w-100">
                 Login
               </button>
 
