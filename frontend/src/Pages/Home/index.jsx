@@ -152,12 +152,19 @@ const Home = () => {
             todo.map((item, i) => {
 
               return (
-                <div key={i} className='row d-flex flex-row flex-lg-row flex-md-row flex-sm-column gap-4 align-items-center'>
-                  <div className='col-lg-6 col-md-12 col-sm '>
-                    <b className='fs-1'>{item?.title}</b><br /><br />
-                    <p className='text-black word fs-5'>{item?.description}</p>
+                <div key={i} className='row align-items-center gy-4 gx-lg-5'>
+                  <div className='col-lg-6 col-12 order-1'>
+                    <b className='fs-1'>{item?.title}</b>
+                    <p className='text-black fs-5 mt-3'>{item?.description}</p>
                   </div>
-                  <img src={item?.image} alt="image" className='col-lg-6 col-md-12 col-sm' />
+
+                  <div className='col-lg-6 col-12 order-lg-2 order-2'>
+                    <img
+                      src={item?.image}
+                      alt="image"
+                      className='img-fluid w-100 rounded'
+                    />
+                  </div>
                 </div>)
             })
           }
