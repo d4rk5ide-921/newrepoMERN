@@ -5,6 +5,7 @@ import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { FaDatabase } from "react-icons/fa6";
 import { FaLaptopCode } from "react-icons/fa";
 import { AuthContext } from '../Context/AuthContext';
+import { Link } from 'react-router-dom';
 import { ToDoContext } from '../Context/ToDoContext';
 
 
@@ -17,6 +18,7 @@ const Home = () => {
   const [count, setCount] = useState(0)
   const [experience, setExperience] = useState(0)
   const [followers, setFollowers] = useState(0)
+  const { cards, setCards } = useContext(ToDoContext);
   // console.log(todo);
 
   setTimeout(() => {
@@ -66,26 +68,18 @@ const Home = () => {
   const handleChange = () => {
     setText({ name: "CDD", dec: "sjfhjhdhddj" })
   }
-  const cards = [
+  const icon = [
     {
-      icon: <BsLaptop size={30} className="mb-3" />,
-      title: "Ethical Hacking and Penetration Testing",
-      desc: "Learn Cybersecurity a fun way, through hands-on Ethical Hacking and Penetration Testing techniques."
+      icon: <BsLaptop size={30} className="mb-3" />
     },
     {
-      icon: <HiMiniComputerDesktop size={30} className="mb-3" />,
-      title: "Cybersecurity Foundations",
-      desc: "Build a strong foundation that supports any cybersecurity path."
+      icon: <HiMiniComputerDesktop size={30} className="mb-3" />
     },
     {
-      icon: <FaDatabase size={30} className="mb-3" />,
-      title: "Data & Network Security",
-      desc: "Understand how data and networks are protected in real environments."
+      icon: <FaDatabase size={30} className="mb-3" />
     },
     {
-      icon: <FaLaptopCode size={30} className="mb-3" />,
-      title: "Secure Development",
-      desc: "Learn how developers write secure and resilient applications."
+      icon: <FaLaptopCode size={30} className="mb-3" />
     }
   ];
   const articles = [
@@ -146,7 +140,7 @@ const Home = () => {
                 )
               })
             }
-            <button onClick={handleChange} style={{ marginTop: "100px", border: "2px solid green" }}>HandlChange</button>
+            {/* <button onClick={handleChange} style={{ marginTop: "100px", border: "2px solid green" }}>HandlChange</button> */}
 
 
 
@@ -159,9 +153,9 @@ const Home = () => {
 
               return (
                 <div key={i} className='row d-flex flex-row flex-lg-row flex-md-row flex-sm-column gap-4 align-items-center'>
-                  <div className='col-lg-6 col-md-12 col-sm'>
-                    <b>{item?.title}</b><br /><br />
-                    <p className='text-black word'>{item?.description}</p>
+                  <div className='col-lg-6 col-md-12 col-sm '>
+                    <b className='fs-1'>{item?.title}</b><br /><br />
+                    <p className='text-black word fs-5'>{item?.description}</p>
                   </div>
                   <img src={item?.image} alt="image" className='col-lg-6 col-md-12 col-sm' />
                 </div>)
@@ -180,17 +174,17 @@ const Home = () => {
           <div className="row justify-content-center g-4">
 
             {cards.map((card, index) => (
-              <div className="col-md-6" key={index}>
-                <div className="cyber-card p-4 background text-white d-flex flex-column justify-content-center align-items-center text-center">
+              <div className="col-md-6" key={card._id || index}>
+                <div className="cyber-card p-4 background rounded text-white d-flex flex-column justify-content-center align-items-center text-center">
 
-                  {card.icon}
+                  {icon[index]?.icon}
 
                   <h5>
                     <b>{card.title}</b>
                   </h5>
 
                   <p className="fs-5">
-                    {card.desc}
+                    {card.description}
                   </p>
 
                 </div>
@@ -275,11 +269,11 @@ const Home = () => {
         <br /><br /><br />
       </div>
       <div className='container text-center py-5'>
-        <b className='fs-2 text-white'>Gain Real-World Skills Designed To Get You Hired</b>
+        <b className='fs-2 text-blue'>Gain Real-World Skills Designed To Get You Hired</b>
         <br /> <br />
-        <p className='text-white font-size'>At HackingLoops, our blueprint offers real-world training that gives you the practical, hands-on <br /> experience employers demand on day 1 upon hire. All without without needing to code, chase <br /> expensive certifications, or go back for a degree.</p>
+        <p className='text-black font-size'>At HackingLoops, our blueprint offers real-world training that gives you the practical, hands-on <br /> experience employers demand on day 1 upon hire. All without without needing to code, chase <br /> expensive certifications, or go back for a degree.</p>
         <br />
-        <p className='text-white font-size'>By applying your knowledge in real-world scenarios, you’ll bridge the gap that has been keeping you <br /> from getting started — mastering core cybersecurity skills faster, more effectively, and with confidence.</p>
+        <p className='text-black font-size'>By applying your knowledge in real-world scenarios, you’ll bridge the gap that has been keeping you <br /> from getting started — mastering core cybersecurity skills faster, more effectively, and with confidence.</p>
         <button className='btnu'>
           <b>Quickly Get Started In Cybersecurity Today</b>
         </button>
@@ -319,7 +313,7 @@ const Home = () => {
           </div>
           <br /><br />
           <div className='align-items-center justify-content-center d-flex'>
-            <button className=' bg-blue '><b>Read More</b></button>
+            <button className=' bg-blue '><b><Link to="/blog">Read More</Link></b></button>
           </div>
         </div>
       </div>

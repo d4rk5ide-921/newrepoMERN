@@ -11,7 +11,7 @@ import Header from './Component/Header'
 import Register from './Login/Register'
 import Login from './Login/Login'
 import Admin from '../admin'
-// import TodoTable from './Todo'
+import TodoTable from './Todo'
 // import Footer from './Component/Error'
 
 
@@ -20,7 +20,7 @@ const Pages = () => {
     <div className="app">
       <Header classes={"header-sticky"} />
       <main className="content">
-        <Routes>
+        <Routes>  
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
@@ -28,7 +28,7 @@ const Pages = () => {
           <Route path="/free-break" element={<FreeBreak />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/todo" element={<TodoTable />} /> */}
+          <Route path="/todo" element={<TodoTable />} />
           <Route path="/cert" element={<Cert />} />
           <Route path="/admin/*" element={<Admin />} />
           <Route path="*" element={<>Page Not Found 404</>} />

@@ -45,6 +45,7 @@ const TodoTable = () => {
       alert("Please enter both title and description!");
       return;
     }
+    console.log("1")
 
     const image = await uploadToCloudinary(newTodo.image);
     console.log(image);

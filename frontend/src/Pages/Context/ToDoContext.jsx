@@ -7,27 +7,30 @@ const ToDoProvider = ({ children }) => {
   const [todo, setTodo] = useState([]);
   const [student, setStudent] = useState([]);
   const [registersData, setregistersData] = useState([]);
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
     const fetchTodo = async () => {
       try {
         const res = await axios.get("http://localhost:5000/todo/alltodo");
         const resp = await axios.get("http://localhost:5000/student/get");
+        const card = await axios.get("http://localhost:5000/cards/all");
         // const reg = await axios.get("http://localhost:5000/register/get");
         setTodo(res.data.user);
         setStudent(resp.data.student);
+        setCards(card.data);
         // setregistersData(reg.data.register);
         // console.log(todo)
         // console.log(student)
         // console.log(registersData)
       } catch (e) {
-        // console.log(e);
+        console.log(e.response?.data || e.message);
       }
     };
     fetchTodo();
   }, []);
   return (
-    <ToDoContext.Provider value={{ todo, setTodo, student, setStudent, registersData, setregistersData }}>
+    <ToDoContext.Provider value={{ todo, setTodo, student, setStudent, registersData, setregistersData, cards, setCards }}>
       {children}
     </ToDoContext.Provider>
   );
